@@ -30,6 +30,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'AppCtrl'
     })
 
+    .state('app.login', {
+      url: "/login",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/login.html"
+        }
+      }
+    })
+
     .state('app.search', {
       url: "/search",
       views: {
@@ -87,7 +96,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-
     .state('app.profle', {
       url: "/profile",
       views: {
@@ -99,6 +107,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     });
     
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/main');
+  $urlRouterProvider.otherwise('/app/login');
 });
 

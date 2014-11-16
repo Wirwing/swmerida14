@@ -36,3 +36,89 @@ ul.rating li {
 ul.rating li i {
   font-size: 30px;
 }
+
+.app {
+background: url(pics/app-bg.jpg) no-repeat center center fixed; width: 100%; height: 500px; position: relative;
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pics/app-bg.jpg', sizingMethod='scale');
+-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pics/app-bg.jpg', sizingMethod='scale')";
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+text-align: center;
+}
+.app img {width: 60% ;margin: 40px auto; display: block;}
+.app form {width: 70%; margin: 0 auto;}
+.app form input {padding: 20px; text-align: center;
+-webkit-border-radius:10px;
+border-radius:10px;
+}
+
+.btn {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 15px auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-bottom: 40px;
+    width: 100%;
+    padding: 0 14px;
+
+box-sizing:content-box;
+-ms-box-sizing:content-box;
+-moz-box-sizing:content-box;
+-webkit-box-sizing:content-box;
+}
+.btn img {padding: 0; margin: 15px auto}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-2 {
+    background: #336666;
+    color: #fff;
+    box-shadow: 0 6px #003333;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+/* Button 2h */
+.btn-2h {
+    border-radius: 20px;
+}
+
+.btn-2h:hover {
+    box-shadow: 0 4px #003333;
+    top: 2px;
+}
+
+.btn-2h:active {
+    box-shadow: 0 0 #003333;
+    top: 6px;
+}
+
+.login-background{
+  background: url("../pics/app-bg.jpg") no-repeat center center fixed; width: 100%; position: relative;
+}
+
+.logo-koi{
+  display:block;
+  margin:auto;
+}
