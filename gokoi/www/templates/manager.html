@@ -1,23 +1,40 @@
-<ion-view title="Job">
+<ion-view title="Empleador">
   <ion-content class="has-header">
 
   <div class="details">
 
       <img src="pics/{{manager.pic}}" width="100" height="100"/>
-      <h4>{{manager.name}}</h4>
-      <p>{{manager.location}}</p>
-      
+      <h2><strong>{{manager.business_name}}</strong></h2>
+      <p>{{manager.description}}</p>
+
+      <br> <br>
+
+      <div class="item item-divider">
+          Datos
+      </div>
+
+      <div class="item item-body">
+        <div class="row">
+          <div class="col">Ubicación: {{manager.location}}, {{manager.country}}</div>
+          <div class="col">Gerente: {{manager.name}}</div>
+        </div>
+      </div>
+
       <a class="item item-icon-left" href="mailto:{{job.manager.email}}">
           <i class="icon ion-ios7-email"></i>Email<p>{{manager.email}}</p>
       </a>
 
   </div>
 
+  <div class="item item-divider">
+      Trabajos publicados
+  </div>
+
   <ion-list>
-    <ion-item class="item item-avatar" ng-repeat="job in manager.jobs" href="#/app/jobs/{{job.id}}">
+    <ion-item class="item item-avatar" ng-repeat="job in jobs" href="#/app/jobs/{{job.id}}">
       
         <img src="pics/{{job.pic }}" />
-        <h2>{{job.title}}</h2>
+        <h2>{{job.location}}</h2>
         <p>{{job.description}}</p>
 
     </ion-item>

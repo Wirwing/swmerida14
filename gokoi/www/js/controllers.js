@@ -34,20 +34,23 @@ angular.module('starter.controllers', [])
 })
 
 .controller('mainCtrl', function($scope, JobService) {
-  JobService.findAll().then(function (jobs) {
+  JobService.allInterested().then(function (jobs) {
     $scope.jobs = jobs;
   });
 })
 
 .controller('JobCtrl', function($scope, $stateParams, JobService) {
-  JobService.findById($stateParams.jobId).then(function(job) {
+  JobService.interestedById($stateParams.jobId).then(function(job) {
     $scope.job = job;
   });
 })
 
-.controller('ManagerCtrl', function($scope, $stateParams, ManagerService) {
+.controller('ManagerCtrl', function($scope, $stateParams, ManagerService, JobService) {
   ManagerService.findById($stateParams.managerId).then(function(manager) {
     $scope.manager = manager;
+    JobService.findByManager(manager.id).then(function(jobs) {
+      $scope.jobs = jobs;
+    });
   });
 })
 
@@ -63,6 +66,12 @@ angular.module('starter.controllers', [])
     $scope.profile = profile;
   });
 
+
+  // set the rate and max variables
+  $scope.rate = 3;
+  $scope.max = 5;
+
+  
   $scope.tab = 1;
 
   $scope.setTab = function(newValue){

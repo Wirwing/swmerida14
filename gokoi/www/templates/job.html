@@ -1,4 +1,4 @@
-<ion-view title="Job">
+<ion-view title="Oferta de Trabajo">
     <ion-content class="has-header">
 
         <div class="details">
@@ -6,15 +6,24 @@
             <img src="pics/{{job.pic}}" width="100" height="100"/>
             <h4>{{job.title}}</h4>
             <p>{{job.description}}</p>
-            <a class="button button-info icon icon-right ion-chevron-right">
-                Interesado
-            </a>  
             
         </div>
 
+        <br/><br/>
+
+        <div class="card">
+            <li class="item item-checkbox item-right">
+                <label class="checkbox">
+                  <input type="checkbox" ng-checked="job.interested">
+                </label>
+                Estoy Interesado
+            </li>    
+        </div>
+
         <div class="list card">
+
             <a class="item item-icon-left" href="#/app/managers/{{job.manager.id}}">
-                <i class="icon ion-ios7-person"></i>Ver Administrador<p>{{job.manager.name}}</p>
+                <i class="icon ion-ios7-person"></i>Ver Empleador<p>{{job.manager.name}}</p>
             </a>
             <a class="item item-icon-left" href="mailto:{{job.manager.email}}">
                 <i class="icon ion-ios7-email"></i>Email<p>{{job.manager.email}}</p>

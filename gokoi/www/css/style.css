@@ -1,15 +1,32 @@
 /* Empty. Add your own CSS if you like */
 .details {
-    padding: 0px 12px 20px 12px;
+  padding: 0px 12px 20px 12px;
 }
 
 .details img {
-    float: left;
-    margin-right: 12px;
+  float: left;
+  margin-right: 12px;
 }
 
 .styled-button{
 	margin-top: 24px;
 	text-align: right;
 	margin-right: 12px;
+}
+
+.ranked{
+    width:25%;/*adjust this value to your needs*/
+    max-width: the size of the image;/* so it wont get bigger and pixelated*/
+    height:auto;
+ }
+
+ul.rating li {
+  display: inline;
+  border: 0px;
+  background: none;
+  padding: 5px 10px;
+}
+
+ul.rating li i {
+  font-size: 30px;
 }
