@@ -18,7 +18,13 @@
     width:25%;/*adjust this value to your needs*/
     max-width: the size of the image;/* so it wont get bigger and pixelated*/
     height:auto;
- }
+}
+
+.ranked-mini{
+    width:15%;/*adjust this value to your needs*/
+    max-width: the size of the image;/* so it wont get bigger and pixelated*/
+    height:auto;
+}
 
 ul.rating li {
   display: inline;

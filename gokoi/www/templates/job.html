@@ -1,15 +1,13 @@
 <ion-view title="Oferta de Trabajo">
     <ion-content class="has-header">
 
-        <div class="details">
+    <div class="details">
 
-            <img src="pics/{{job.pic}}" width="100" height="100"/>
-            <h4>{{job.title}}</h4>
-            <p>{{job.description}}</p>
-            
-        </div>
+        <img src="pics/{{manager.pic}}" width="100" height="100"/>
+        <h2><strong>{{job.description}}</strong></h2>
+        <p>{{manager.location}}, {{manager.country}}</p>
 
-        <br/><br/>
+        <br>
 
         <div class="card">
             <li class="item item-checkbox item-right">
@@ -17,18 +15,30 @@
                   <input type="checkbox" ng-checked="job.interested">
                 </label>
                 Estoy Interesado
-            </li>    
+            </li>
         </div>
 
-        <div class="list card">
-
-            <a class="item item-icon-left" href="#/app/managers/{{job.manager.id}}">
-                <i class="icon ion-ios7-person"></i>Ver Empleador<p>{{job.manager.name}}</p>
-            </a>
-            <a class="item item-icon-left" href="mailto:{{job.manager.email}}">
-                <i class="icon ion-ios7-email"></i>Email<p>{{job.manager.email}}</p>
-            </a>
+        <div class="item item-divider">
+            Datos
         </div>
+
+        <a class="item item-icon-left" href="#/app/managers/{{manager.id}}">
+            <i class="icon ion-ios7-person"></i>Gerente<p>{{manager.name}}</p>
+        </a>
+
+        <a class="item item-icon-left">
+            <i class="icon"></i>Descripción<p>{{job.details}}</p>
+        </a>
+
+        <a class="item item-icon-left">
+            <i class="icon"></i>Fecha<p>{{job.date}}</p>
+        </a>
+
+        <a class="item item-icon-left">
+            <i class="icon"></i>Habilidad deseada<p>{{job.skills}}</p>
+        </a>
+
+    </div>
 
     </ion-content>
 </ion-view>

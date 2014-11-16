@@ -39,9 +39,15 @@ angular.module('starter.controllers', [])
   });
 })
 
-.controller('JobCtrl', function($scope, $stateParams, JobService) {
-  JobService.interestedById($stateParams.jobId).then(function(job) {
+.controller('JobCtrl', function($scope, $stateParams, JobService, ManagerService) {
+  JobService.findById($stateParams.jobId).then(function(job) {
     $scope.job = job;
+
+
+    ManagerService.findById(job.manager.id).then(function(manager) {
+      $scope.manager = manager;
+    });
+
   });
 })
 

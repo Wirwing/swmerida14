@@ -2,29 +2,56 @@ angular.module('starter.services', [])
 
     .factory('JobService', function($q) {
 
-        var intereted_jobs = [
-            { id: 1, location: 'Tulum', description: "Mesero", pic: "rene.jpg", interested: true, 
-
-            manager: { id: 1, name: "John Doe", email: 'example@mail.com' }
-        },
-            { id: 2, location: 'Cancún', description: "Traductor ingles-español", pic: "rene.jpg", interested: true, 
-            manager: { id: 1, name: "John Doe", email: 'example@mail.com' }
-        },
-            { id: 3, location: 'Isla Mujeres', description: "Delivery guy", pic: "rene.jpg", interested: true, 
-            manager: { id: 1, name: "John Doe", email: 'example@mail.com' }
-        }];
-
         var jobs = [
-            { id: 1, location: 'Tulum', description: "Mesero", pic: "rene.jpg", interested: true, 
-            
-            manager: { id: 1, name: "John Doe", email: 'example@mail.com' }
-        },
-            { id: 2, location: 'Cancún', description: "Traductor ingles-español", pic: "rene.jpg", interested: true, 
-            manager: { id: 1, name: "John Doe", email: 'example@mail.com' }
-        },
-            { id: 3, location: 'Isla Mujeres', description: "Delivery guy", pic: "rene.jpg", interested: true, 
-            manager: { id: 1, name: "John Doe", email: 'example@mail.com' }
-        }];
+            { 
+                id: 1, location: "Mérida Yucatán, México", description: "DJ", 
+                pic: "pompilogo.jpg", interested: true, 
+                date: "A partir de 01/11/2014",
+                details: "DJ nocturno, especificaciones a tratar",
+                skills: "Indiferente",
+                manager: { id: 1}
+            },
+            { 
+                id: 2, location: "Mérida Yucatán, México", description: "Artista", 
+                pic: "pompilogo.jpg", interested: true, 
+                date: "A partir de 01/11/2014",
+                details: "Artistas enfocados al muralismo, especificaciones a tratar",
+                skills: "Pintores muralistas",
+                manager: { id: 1}
+            },
+            { 
+                id: 3, location: "Mérida Yucatán, México", description: "Músico", 
+                pic: "coyote.jpg", interested: true, 
+                date: "Abierto",
+                details: "Especificaciones a tratar",
+                skills: "Acústica Jazz",
+                manager: { id: 2}
+            },
+            { 
+                id: 4, location: "Mérida Yucatán, México", description: "Jardinero", 
+                pic: "coyote.jpg", interested: false, 
+                date: "Abierto",
+                details: "Especificaciones a tratar",
+                skills: "Indiferente",
+                manager: { id: 2}
+            },
+            { 
+                id: 5, location: "Mérida Yucatán, México", description: "Diseñador Gráfico", 
+                pic: "coyote.jpg", interested: false, 
+                date: "Abierto",
+                details: "Especificaciones a tratar",
+                skills: "Indiferente",
+                manager: { id: 2}
+            },
+            { 
+                    id: 6, location: "Tulum", description: "Guitarrista acústico", 
+                    pic: "coyote.jpg", interested: false, 
+                    date: "Abierto",
+                    details: "Especificaciones a tratar",
+                    skills: "Indiferente",
+                    manager: { id: 2 }
+            }
+        ];
 
         // We use promises to make this api asynchronous. This is clearly not necessary when using in-memory data
         // but it makes this service more flexible and plug-and-play. For example, you can now easily replace this
@@ -33,15 +60,13 @@ angular.module('starter.services', [])
 
         return {
 
-            interestedById: function(jobId) {
-                var deferred = $q.defer();
-                var employee = intereted_jobs[jobId - 1];
-                deferred.resolve(employee);
-                return deferred.promise;
-            },
-
             allInterested: function() {
                 var deferred = $q.defer();
+
+                var intereted_jobs = jobs.filter(function(element) {
+                    return element.interested == true;
+                });
+
                 deferred.resolve(intereted_jobs);
                 return deferred.promise;
             },
@@ -85,9 +110,13 @@ angular.module('starter.services', [])
     .factory('ManagerService', function($q) {
 
         var managers = [
-            { 
-                id: 1, name: "René Gilberto Burgos", pic: "pompilogo.jpg", email: 'rene_burgos@mail.com', business_name: "Casa Pompidou", 
+            {
+                id: 1, name: "René Gilberto Burgos", pic: "pompilogo.jpg", email: 'rene_burgos@gmail.com', business_name: "Casa Pompidou", 
                 location: "Mérida Yucatán", country: "México", description: "Bar, Galería de Arte"
+            },
+            {
+                id: 2, name: "Leonardo Torres", pic: "coyote.jpg", email: 'golde_coyote@hotmail.com', business_name: "Golde Coyote", 
+                location: "Mérida Yucatán", country: "México", description: "Restaurant Bar"
             }
         ];
 
@@ -114,15 +143,26 @@ angular.module('starter.services', [])
 
     .factory('ProfileService', function($q) {
 
-        var profile = { id: 1, name: "John Doe", pic: "rene.jpg", email: 'traveler@gmail.com',
+        var profile = { 
+            id: 1, name: "Juan Viajero", pic: "stevens.jpg", email: 'traveler@gmail.com',
             skills: [
-            {id: 1, name: "Tocar guitarra"}, {id: 2, name: "Hablar ingles-español"}
+            {id: 1, name: "Tocar guitarra"}, {id: 2, name: "Enseñanza"}
+            ],
+            languages:[
+                { id: 1, name: "Ingles" },
+                { id: 1, name: "Español" }
             ],
             past_jobs: [
-                        { id: 1, title: 'Tulum', description: "Mesero", pic: "rene.jpg" , manager: { id: 1, name: "John Doe", email: 'example@mail.com' }},
-                        { id: 2, title: 'Cancún', description: "Traductor ingles-español", pic: "rene.jpg", manager: { id: 1, name: "John Doe", email: 'example@mail.com' }},
-                        { id: 3, title: 'Isla Mujeres', description: "Delivery guy", pic: "rene.jpg", manager: { id: 1, name: "John Doe", email: 'example@mail.com' }}
-                    ] } ;
+                { 
+                    id: 6, location: "Tulum", description: "Guitarrista acústico", 
+                    pic: "coyote.jpg", interested: false, 
+                    date: "Abierto",
+                    details: "Especificaciones a tratar",
+                    skills: "Indiferente",
+                    manager: { id: 2 }
+                }
+            ]
+        };
 
         // We use promises to make this api asynchronous. This is clearly not necessary when using in-memory data
         // but it makes this service more flexible and plug-and-play. For example, you can now easily replace this

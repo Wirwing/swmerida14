@@ -6,22 +6,24 @@
       <img src="pics/{{manager.pic}}" width="100" height="100"/>
       <h2><strong>{{manager.business_name}}</strong></h2>
       <p>{{manager.description}}</p>
+      <img src="pics/stars.png" class="ranked-mini">
 
-      <br> <br>
+      <br> <br> <br>
 
       <div class="item item-divider">
           Datos
       </div>
 
-      <div class="item item-body">
-        <div class="row">
-          <div class="col">Ubicación: {{manager.location}}, {{manager.country}}</div>
-          <div class="col">Gerente: {{manager.name}}</div>
-        </div>
-      </div>
+      <a class="item item-icon-left">
+          <i class="icon"></i>Gerente<p>{{manager.name}}</p>
+      </a>
+
+      <a class="item item-icon-left">
+          <i class="icon"></i>Ubicación<p>{{manager.location}}, {{manager.country}}</p>
+      </a>
 
       <a class="item item-icon-left" href="mailto:{{job.manager.email}}">
-          <i class="icon ion-ios7-email"></i>Email<p>{{manager.email}}</p>
+          <i class="icon"></i>Email<p>{{manager.email}}</p>
       </a>
 
   </div>

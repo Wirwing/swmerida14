@@ -1,36 +1,50 @@
 <ion-view title="Perfil">
     <ion-content class="has-header">
 
-        <div class="profile-content">
-            <div class="item item-avatar">
-                <img src="mcfly.jpg">
-                <h2>{{profile.name}}</h2>
-                <p>{{profile.email}}</p>
-                <img src="pics/stars.png" class="ranked">
-             </div>
+      <div class="details">
 
-             <div class="item item-body">
+          <img src="pics/{{profile.pic}}" width="100" height="100"/>
+          <h2><strong>{{profile.name}}</strong></h2>
+          <p>{{profile.email}}</p>
 
-                 <div class="button-bar">
-                   <a class="button" ng-click="setTab(1)">Habilidades</a>
-                   <a class="button" ng-click="setTab(2)">Historial Trabajo</a>
-                 </div>
+          <img src="pics/stars.png" class="ranked">
 
-            </div>
+      </div>
 
-            <ion-list ng-show="isSet(1)">
-              <ion-item class="item" ng-repeat="skill in profile.skills">
-                   {{skill.name}}
-              </ion-item>
-            </ion-list>
+      <br>
 
-            <ion-list ng-show="isSet(2)">
-              <ion-item class="item" ng-repeat="job in profile.past_jobs">
-                   {{job.title}}
-              </ion-item>
-            </ion-list>
+      <div class="item item-body">
 
-        </div>
+           <div class="button-bar">
+             <a class="button" ng-click="setTab(1)">Habilidades</a>
+             <a class="button" ng-click="setTab(2)">Idiomas</a>
+             <a class="button" ng-click="setTab(3)">Historial Trabajo</a>
+             <a class="button" ng-click="setTab(4)">Comentarios</a>
+           </div>
+
+      </div>
+
+      <ion-list ng-show="isSet(1)">
+        <ion-item class="item" ng-repeat="skill in profile.skills">
+             {{skill.name}}
+        </ion-item>
+      </ion-list>
+
+      <ion-list ng-show="isSet(2)">
+        <ion-item class="item" ng-repeat="language in profile.languages">
+             {{language.name}}
+        </ion-item>
+      </ion-list>
+
+      <ion-list ng-show="isSet(3)">
+        <ion-item class="item item-avatar" ng-repeat="job in profile.past_jobs" href="#/app/jobs/{{job.id}}">
+          
+            <img src="pics/{{job.pic }}" />
+            <h2>{{job.description}}</h2>
+            <p>{{job.location}}</p>
+
+        </ion-item>
+      </ion-list>
 
     </ion-content>
 </ion-view>
