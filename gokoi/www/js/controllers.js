@@ -55,4 +55,10 @@ angular.module('starter.controllers', [])
   JobService.findAll().then(function (jobs) {
     $scope.jobs = jobs;
   });
+})
+
+.controller('ProfileCtrl', function($scope, ProfileService) {
+  ProfileService.get().then(function(profile) {
+    $scope.profile = profile;
+  });
 });

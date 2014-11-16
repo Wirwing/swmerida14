@@ -85,6 +85,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'ResultCtrl'
         }
       }
+    })
+
+
+    .state('app.profle', {
+      url: "/profile",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/profile.html",
+          controller: 'ProfileCtrl'
+        }
+      }
     });
     
   // if none of the above states are matched, use this as the fallback
