@@ -49,4 +49,10 @@ angular.module('starter.controllers', [])
   ManagerService.findById($stateParams.managerId).then(function(manager) {
     $scope.manager = manager;
   });
+})
+
+.controller('ResultCtrl', function($scope, $stateParams, JobService) {
+  JobService.findAll().then(function (jobs) {
+    $scope.jobs = jobs;
+  });
 });
