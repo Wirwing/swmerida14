@@ -35,9 +35,18 @@ angular.module('starter.controllers', [])
 
 .controller('mainCtrl', function($scope, JobService) {
   JobService.findAll().then(function (jobs) {
-                $scope.jobs = jobs;
+    $scope.jobs = jobs;
   });
 })
 
-.controller('JobCtrl', function($scope, $stateParams) {
+.controller('JobCtrl', function($scope, $stateParams, JobService) {
+  JobService.findById($stateParams.jobId).then(function(job) {
+    $scope.job = job;
+  });
+})
+
+.controller('ManagerCtrl', function($scope, $stateParams, ManagerService) {
+  ManagerService.findById($stateParams.managerId).then(function(manager) {
+    $scope.manager = manager;
+  });
 });

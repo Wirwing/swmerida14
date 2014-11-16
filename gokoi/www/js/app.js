@@ -65,6 +65,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'JobCtrl'
         }
       }
+    })
+
+    .state('app.manager', {
+      url: "/managers/:managerId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/manager.html",
+          controller: 'ManagerCtrl'
+        }
+      }
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/main');
