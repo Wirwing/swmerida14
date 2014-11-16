@@ -1,8 +1,39 @@
-<ion-view title="Search">
+<ion-view title="Búsqueda">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>Search</h1>
+
+    <label class="item item-input item-select">
+       <div class="input-label">
+         País
+       </div>
+       <select>
+         <option>México</option>
+         <option>USA</option>
+         <option>Japón</option>
+       </select>
+    </label>
+
+    <label class="item item-input item-select">
+       <div class="input-label">
+         Ciudad
+       </div>
+       <select>
+         <option>Playa del Carmen</option>
+         <option>Cancún</option>
+         <option>Tamaulipas</option>
+       </select>
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Month</span>
+      <input type="month">
+    </label>
+
+    <button class="button button-positive">
+      ¡Encuentrame empleo!
+    </button>
+
   </ion-content>
 </ion-view>
