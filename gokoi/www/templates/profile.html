@@ -10,22 +10,26 @@
              </div>
 
              <div class="item item-body">
-                <h3>Habilidades</h3>
-                <ul>
-                    <li>
-                      ...
-                    </li>
-                    <li>
-                      ...
-                    </li>
-                    <li>
-                      ...
-                    </li>
-                    <li>
-                      ...
-                    </li>
-                </ul>
+
+                 <div class="button-bar">
+                   <a class="button" ng-click="setTab(1)">Habilidades</a>
+                   <a class="button" ng-click="setTab(2)">Historial Trabajo</a>
+                 </div>
+
             </div>
+
+            <ion-list ng-show="isSet(1)">
+              <ion-item class="item" ng-repeat="skill in profile.skills">
+                   {{skill.name}}
+              </ion-item>
+            </ion-list>
+
+            <ion-list ng-show="isSet(2)">
+              <ion-item class="item" ng-repeat="job in profile.past_jobs">
+                   {{job.title}}
+              </ion-item>
+            </ion-list>
+
         </div>
 
     </ion-content>

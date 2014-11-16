@@ -2,7 +2,7 @@ angular.module('starter.services', [])
 
     .factory('JobService', function($q) {
 
-        var jobs = jobs = [
+        var jobs = [
             { id: 1, title: 'Tulum', description: "Mesero", pic: "1.jpg" , manager: { id: 1, name: "John Doe", email: 'example@mail.com' }},
             { id: 2, title: 'Cancún', description: "Traductor ingles-español", pic: "1.jpg", manager: { id: 1, name: "John Doe", email: 'example@mail.com' }},
             { id: 3, title: 'Isla Mujeres', description: "Delivery guy", pic: "1.jpg", manager: { id: 1, name: "John Doe", email: 'example@mail.com' }}
@@ -83,7 +83,15 @@ angular.module('starter.services', [])
 
     .factory('ProfileService', function($q) {
 
-        var profile = { id: 1, name: "John Doe", pic: "1.jpg", email: 'traveler@gmail.com' } ;
+        var profile = { id: 1, name: "John Doe", pic: "1.jpg", email: 'traveler@gmail.com',
+            skills: [
+            {id: 1, name: "Tocar guitarra"}, {id: 2, name: "Hablar ingles-español"}
+            ],
+            past_jobs: [
+                        { id: 1, title: 'Tulum', description: "Mesero", pic: "1.jpg" , manager: { id: 1, name: "John Doe", email: 'example@mail.com' }},
+                        { id: 2, title: 'Cancún', description: "Traductor ingles-español", pic: "1.jpg", manager: { id: 1, name: "John Doe", email: 'example@mail.com' }},
+                        { id: 3, title: 'Isla Mujeres', description: "Delivery guy", pic: "1.jpg", manager: { id: 1, name: "John Doe", email: 'example@mail.com' }}
+                    ] } ;
 
         // We use promises to make this api asynchronous. This is clearly not necessary when using in-memory data
         // but it makes this service more flexible and plug-and-play. For example, you can now easily replace this

@@ -58,7 +58,19 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ProfileCtrl', function($scope, ProfileService) {
+
   ProfileService.get().then(function(profile) {
     $scope.profile = profile;
   });
+
+  $scope.tab = 1;
+
+  $scope.setTab = function(newValue){
+    this.tab = newValue;
+  };
+
+  $scope.isSet = function(tabName){
+    return this.tab == tabName;
+  };
+
 });

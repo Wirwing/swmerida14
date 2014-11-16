@@ -7,3 +7,9 @@
     float: left;
     margin-right: 12px;
 }
+
+.styled-button{
+	margin-top: 24px;
+	text-align: right;
+	margin-right: 12px;
+}
