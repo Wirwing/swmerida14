@@ -4,19 +4,11 @@ angular.module('starter.services', [])
 
         var jobs = [
             { 
-                id: 1, location: "Mérida Yucatán, México", description: "DJ", 
-                pic: "pompilogo.jpg", interested: true, 
-                date: "A partir de 01/11/2014",
-                details: "DJ nocturno, especificaciones a tratar",
+                id: 1, location: "Mérida Yucatán, México", description: "Translator", 
+                pic: "gokoi.png", interested: true, 
+                date: "18 nov 2pm",
+                details: "I need a native English speaker",
                 skills: "Indiferente",
-                manager: { id: 1}
-            },
-            { 
-                id: 2, location: "Mérida Yucatán, México", description: "Artista", 
-                pic: "pompilogo.jpg", interested: true, 
-                date: "A partir de 01/11/2014",
-                details: "Artistas enfocados al muralismo, especificaciones a tratar",
-                skills: "Pintores muralistas",
                 manager: { id: 1}
             },
             { 
@@ -44,12 +36,12 @@ angular.module('starter.services', [])
                 manager: { id: 2}
             },
             { 
-                    id: 6, location: "Tulum", description: "Guitarrista acústico", 
-                    pic: "coyote.jpg", interested: false, 
-                    date: "Abierto",
-                    details: "Especificaciones a tratar",
-                    skills: "Indiferente",
-                    manager: { id: 2 }
+                id: 6, location: "Tulum", description: "Guitarrista acústico", 
+                pic: "coyote.jpg", interested: false, 
+                date: "Abierto",
+                details: "Especificaciones a tratar",
+                skills: "Indiferente",
+                manager: { id: 2 }
             }
         ];
 
@@ -111,8 +103,8 @@ angular.module('starter.services', [])
 
         var managers = [
             {
-                id: 1, name: "René Gilberto Burgos", pic: "pompilogo.jpg", email: 'rene_burgos@gmail.com', business_name: "Casa Pompidou", 
-                location: "Mérida Yucatán", country: "México", description: "Bar, Galería de Arte"
+                id: 1, name: "Andrea", pic: "gokoi.png", email: 'andreaeaguiar@gmail.com', business_name: "GoKoi", 
+                location: "Mérida Yucatán", country: "México", description: "Servicios Empresariales"
             },
             {
                 id: 2, name: "Leonardo Torres", pic: "coyote.jpg", email: 'golde_coyote@hotmail.com', business_name: "Golde Coyote", 
@@ -144,9 +136,9 @@ angular.module('starter.services', [])
     .factory('ProfileService', function($q) {
 
         var profile = { 
-            id: 1, name: "Juan Viajero", pic: "stevens.jpg", email: 'traveler@gmail.com',
+            id: 1, name: "Victor", pic: "stevens.jpg", email: 'alivic29@gmail.com',
             skills: [
-            {id: 1, name: "Tocar guitarra"}, {id: 2, name: "Enseñanza"}
+                {id: 1, name: "Editing"}, {id: 2, name: "Carpentry"}, {id:3, name: 'Landscaping'}, {id:4, name:'General Labor'}
             ],
             languages:[
                 { id: 1, name: "Ingles" },
