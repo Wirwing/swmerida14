@@ -12,36 +12,52 @@ angular.module('starter.services', [])
                 manager: { id: 1}
             },
             { 
-                id: 3, location: "Mérida Yucatán, México", description: "Músico", 
+                id: 2, location: "Mérida Yucatán, México", description: "DJ", 
+                pic: "pompilogo.jpg", interested: true, 
+                date: "A partir de 01/11/2014",
+                details: "DJ nocturno, especificaciones a tratar",
+                skills: "Indiferente",
+                manager: { id: 2}
+            },
+            { 
+                id: 3, location: "Mérida Yucatán, México", description: "Artista", 
+                pic: "pompilogo.jpg", interested: true, 
+                date: "A partir de 01/11/2014",
+                details: "Artistas enfocados al muralismo, especificaciones a tratar",
+                skills: "Pintores muralistas",
+                manager: { id: 2}
+            },
+            { 
+                id: 4, location: "Mérida Yucatán, México", description: "Músico", 
                 pic: "coyote.jpg", interested: true, 
                 date: "Abierto",
                 details: "Especificaciones a tratar",
                 skills: "Acústica Jazz",
-                manager: { id: 2}
+                manager: { id: 3}
             },
             { 
-                id: 4, location: "Mérida Yucatán, México", description: "Jardinero", 
+                id: 5, location: "Mérida Yucatán, México", description: "Jardinero", 
                 pic: "coyote.jpg", interested: false, 
                 date: "Abierto",
                 details: "Especificaciones a tratar",
                 skills: "Indiferente",
-                manager: { id: 2}
+                manager: { id: 3}
             },
             { 
-                id: 5, location: "Mérida Yucatán, México", description: "Diseñador Gráfico", 
+                id: 6, location: "Mérida Yucatán, México", description: "Diseñador Gráfico", 
                 pic: "coyote.jpg", interested: false, 
                 date: "Abierto",
                 details: "Especificaciones a tratar",
                 skills: "Indiferente",
-                manager: { id: 2}
+                manager: { id: 3}
             },
             { 
-                id: 6, location: "Tulum", description: "Guitarrista acústico", 
+                id: 7, location: "Tulum", description: "Guitarrista acústico", 
                 pic: "coyote.jpg", interested: false, 
                 date: "Abierto",
                 details: "Especificaciones a tratar",
                 skills: "Indiferente",
-                manager: { id: 2 }
+                manager: { id: 3 }
             }
         ];
 
@@ -107,7 +123,11 @@ angular.module('starter.services', [])
                 location: "Mérida Yucatán", country: "México", description: "Servicios Empresariales"
             },
             {
-                id: 2, name: "Leonardo Torres", pic: "coyote.jpg", email: 'golde_coyote@hotmail.com', business_name: "Golde Coyote", 
+                id: 2, name: "René Gilberto Burgos", pic: "pompilogo.jpg", email: 'rene_burgos@gmail.com', business_name: "Casa Pompidou", 
+                location: "Mérida Yucatán", country: "México", description: "Bar, Galería de Arte"
+            },
+            {
+                id: 3, name: "Leonardo Torres", pic: "coyote.jpg", email: 'golde_coyote@hotmail.com', business_name: "Golde Coyote", 
                 location: "Mérida Yucatán", country: "México", description: "Restaurant Bar"
             }
         ];
